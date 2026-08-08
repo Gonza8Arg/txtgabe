@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TXTGABE.COM — Sell Any Vehicle. Fast.</title>
+<meta name="description" content="Cars, motorcycles, RVs, trailers and more. Send your VIN and get connected with a local buyer.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<center>WEBSITE IN DEVELOPING NO ACTIONS</center>
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+
+    <a href="/" class="logo-link" aria-label="TXTGABE.COM - Inicio">
+      <!-- Reemplazá esta ruta por tu logo real (PNG/SVG) -->
+      <img src="assets/logo.png" alt="TXTGABE.COM - Text Me The VIN" class="logo-img">
+    </a>
+
+    <nav class="main-nav">
+      <a href="#como-funciona">How It Works</a>
+      <a href="#vehiculos">Vehicles We Buy</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#form" class="btn btn-primary btn-nav">Get an Offer</a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#como-funciona">How It Works</a>
+    <a href="#vehiculos">Vehicles We Buy</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#form" class="mobile-cta">Get an Offer</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+
+  <div class="hero-media">
+    <!-- Reemplazá esta ruta por la foto de la camioneta frente a las montañas -->
+    <img src="assets/hero-truck.jpg" alt="Camioneta Toyota Tacoma con branding TXTGABE.COM frente a las montañas" class="hero-img">
+  </div>
+
+  <div class="hero-copy">
+    <h1 class="hero-title">Sell Any Vehicle. Fast.</h1>
+    <p class="hero-subtitle">
+      Cars, motorcycles, RVs, trailers and more.<br>
+      Send your VIN and get connected with a local buyer.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#form" class="btn btn-primary">Start With Your VIN</a>
+      <a href="sms:+10000000000" class="btn btn-outline">Text Gabe</a>
+    </div>
+
+    <ul class="trust-bar">
+      <li>Fast</li>
+      <li class="sep">•</li>
+      <li>Local</li>
+      <li class="sep">•</li>
+      <li>No Obligation</li>
+    </ul>
+  </div>
+
+  <!-- ============ FORM CARD ============ -->
+  <div class="form-wrap" id="form">
+    <form class="offer-form" action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+
+      <h2 class="form-title">Get a Local Offer</h2>
+
+      <div class="vehicle-tabs" role="radiogroup" aria-label="Tipo de vehículo">
+        <input type="radio" name="vehicle_type" id="type-car" value="Car / Truck" checked hidden>
+        <label for="type-car" class="tab">Car / Truck</label>
+
+        <input type="radio" name="vehicle_type" id="type-moto" value="Motorcycle" hidden>
+        <label for="type-moto" class="tab">Motorcycle</label>
+
+        <input type="radio" name="vehicle_type" id="type-rv" value="RV" hidden>
+        <label for="type-rv" class="tab">RV</label>
+
+        <input type="radio" name="vehicle_type" id="type-trailer" value="Trailer" hidden>
+        <label for="type-trailer" class="tab">Trailer</label>
+
+        <input type="radio" name="vehicle_type" id="type-other" value="Other" hidden>
+        <label for="type-other" class="tab">Other</label>
+      </div>
+
+      <div class="form-grid">
+        <input type="text" name="vin_or_plate" placeholder="VIN or License Plate" required>
+        <input type="text" inputmode="numeric" name="mileage" placeholder="Mileage" required>
+        <input type="text" inputmode="numeric" name="zip_code" placeholder="ZIP Code" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+      </div>
+
+      <button type="submit" class="btn btn-continue">Continue</button>
+    </form>
+  </div>
+
+  <!-- ============ WE BUY MORE THAN CARS ============ -->
+  <div class="vehicles-wrap" id="vehiculos">
+    <h3 class="vehicles-title">We Buy More Than Cars</h3>
+    <div class="vehicles-grid">
+
+      <div class="vehicle-card">
+        <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 22l2-9a3 3 0 0 1 3-2h26a3 3 0 0 1 3 2l2 9"/>
+          <path d="M4 22h40v5.5a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 27.5V22z"/>
+          <circle cx="13" cy="27" r="2.4"/>
+          <circle cx="35" cy="27" r="2.4"/>
+          <path d="M10 16h28"/>
+          <rect x="17" y="18.5" width="14" height="3" rx="0.6" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>Cars &amp; Trucks</span>
+      </div>
+
+      <div class="vehicle-card">
+        <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="24" r="5.4"/>
+          <circle cx="37" cy="24" r="5.4"/>
+          <path d="M15 24l6-11h6l7 8"/>
+          <path d="M15 24H9l4-9h6"/>
+          <path d="M28 13h6l3 6"/>
+        </svg>
+        <span>Motorcycles</span>
+      </div>
+
+      <div class="vehicle-card">
+        <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 25V13a1.4 1.4 0 0 1 1.4-1.4H26l9 6h6a2 2 0 0 1 2 2v5.4"/>
+          <path d="M4 25h39"/>
+          <circle cx="12" cy="26.6" r="2.4"/>
+          <circle cx="33" cy="26.6" r="2.4"/>
+          <rect x="10" y="15" width="6" height="6" rx="0.6"/>
+        </svg>
+        <span>RVs</span>
+      </div>
+
+      <div class="vehicle-card">
+        <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+          <rect x="7" y="11" width="30" height="13" rx="1.4"/>
+          <circle cx="15" cy="27" r="2.4"/>
+          <circle cx="29" cy="27" r="2.4"/>
+          <path d="M37 17h5l3 4v3h-8"/>
+          <rect x="12" y="15" width="4" height="4" rx="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>Trailers &amp; More</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ IMAGEN SECUNDARIA (Gabe remolcando) ============ -->
+  <div class="secondary-media">
+    <!-- Reemplazá esta ruta por la ilustración de Gabe remolcando motos y auto -->
+    <img src="assets/gabe-towing.png" alt="Ilustración de Gabe manejando su camioneta y remolcando motos y un auto" class="secondary-img">
+  </div>
+
+</section>
+
+<!-- ============ CÓMO FUNCIONA ============ -->
+<section class="steps" id="como-funciona">
+  <div class="step">
+    <span class="step-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="3" width="12" height="18" rx="1.4"/>
+        <line x1="9" y1="7.5" x2="15" y2="7.5"/>
+        <line x1="9" y1="11" x2="15" y2="11"/>
+        <line x1="9" y1="14.5" x2="13" y2="14.5"/>
+      </svg>
+    </span>
+    <p>1. Send Your VIN</p>
+  </div>
+
+  <span class="step-divider" aria-hidden="true"></span>
+
+  <div class="step">
+    <span class="step-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="6" width="18" height="13" rx="1.4"/>
+        <path d="M4 7l8 6 8-6"/>
+      </svg>
+    </span>
+    <p>2. Receive an Offer</p>
+  </div>
+
+  <span class="step-divider" aria-hidden="true"></span>
+
+  <div class="step">
+    <span class="step-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="8" cy="9" r="3.2"/>
+        <path d="M10.3 11.3L20 21"/>
+        <path d="M16.5 17.5l2-2"/>
+        <path d="M19 20l2-2"/>
+      </svg>
+    </span>
+    <p>3. Sell Your Vehicle</p>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="final-cta" id="contact">
+  <p>Ready to Get an Offer?</p>
+  <a href="sms:+10000000000" class="btn btn-primary">Text Me the VIN</a>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="about">
+  <p>Independent vehicle marketing and referral service.<br>
+  Purchase offers are made by participating buyers.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
