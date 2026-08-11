@@ -1,44 +1,701 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TXTGABE.COM — Sell Any Vehicle. Fast.</title>
-<meta name="description" content="Cars, motorcycles, RVs, trailers and more. Send your VIN and get connected with a local buyer.">
-<link rel="icon" href="assets/favicon.png">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Básico -->
+  <title>TXTGABE.COM — Sell Any Vehicle Fast | Cars, Trucks, Motorcycles & RVs</title>
+  <meta name="description" content="Sell your vehicle fast with TXTGABE.COM. Get instant cash offers for cars, trucks, motorcycles, RVs, and trailers. Just text your VIN to connect with local buyers!">
+  <meta name="keywords" content="sell car fast, sell my truck, cash for cars, text VIN offer, local car buyers, sell motorcycle, sell RV online, sell trailer fast, TXTGABE">
+  <meta name="author" content="TXTGABE.COM">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://txtgabe.com/">
+
+  <!-- Open Graph (Redes Sociales y WhatsApp) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://txtgabe.com/">
+  <meta property="og:title" content="TXTGABE.COM — Sell Any Vehicle Fast">
+  <meta property="og:description" content="Get connected with local buyers in minutes. Cars, trucks, motorcycles, RVs & trailers. Text your VIN to get an offer.">
+  <meta property="og:image" content="https://txtgabe.com/assets/hero-truck.jpg">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://txtgabe.com/">
+  <meta name="twitter:title" content="TXTGABE.COM — Sell Any Vehicle Fast">
+  <meta name="twitter:description" content="Get connected with local buyers in minutes. Text your VIN to get an offer.">
+  <meta name="twitter:image" content="https://txtgabe.com/assets/hero-truck.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+
+  <!-- Datos Estructurados (Schema.org / JSON-LD para Google Search) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutomotiveBusiness",
+    "name": "TXTGABE.COM",
+    "url": "https://txtgabe.com",
+    "logo": "https://txtgabe.com/assets/logo.png",
+    "image": "https://txtgabe.com/assets/hero-truck.jpg",
+    "description": "Fast local vehicle purchasing and referral service. Cars, motorcycles, RVs, and trailers.",
+    "telephone": "+17862776508",
+    "priceRange": "$$$"
+  }
+  </script>
+  
+<style>
+/* =====================================================
+   TXTGABE.COM — estilos (diseño claro / navy)
+   Tipografías: Archivo Black (titulares) + Inter (cuerpo/UI)
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --cream: #f4f3ef;
+  --white: #ffffff;
+  --navy: #10233f;
+  --navy-2: #16304f;
+  --red: #d21f1f;
+  --red-dark: #ab1717;
+  --gray-500: #6b7280;
+  --gray-300: #d7d5cf;
+  --line: #dedcd4;
+
+  --max-w: 1240px;
+  --radius-lg: 14px;
+  --radius-md: 10px;
+}
+
+*{ box-sizing:border-box; }
+
+html,body{
+  margin:0;
+  padding:0;
+  background: var(--cream);
+  color: var(--navy);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* evita cualquier desplazamiento horizontal accidental */
+  scroll-behavior: smooth;
+}
+
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+button{ font-family:inherit; cursor:pointer; }
+ul{ list-style:none; margin:0; padding:0; }
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 14px 22px;
+  border-radius: var(--radius-md);
+  font-weight:700;
+  font-size: .85rem;
+  letter-spacing: .02em;
+  border: 2px solid transparent;
+  transition: transform .12s ease, filter .12s ease, background-color .12s ease;
+  white-space: nowrap;
+}
+.btn:active{ transform: scale(.98); }
+
+.btn-primary{
+  background: var(--red);
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(210,31,31,.28);
+}
+.btn-primary:hover{ background: var(--red-dark); }
+
+.btn-outline{
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+.btn-outline:hover{ background: rgba(16,35,63,.06); }
+
+.btn-continue{
+  width:100%;
+  background: var(--red);
+  color: var(--white);
+  padding: 15px;
+  font-size: .9rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 16px rgba(210,31,31,.28);
+}
+.btn-continue:hover{ background: var(--red-dark); }
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+.site-header{
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.header-inner{
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 16px 24px;
+  display:flex;
+  align-items:center;
+  gap: 28px;
+}
+
+.logo-link{ display:flex; align-items:center; margin-right:auto; }
+.logo-img{ height: 46px; width:auto; object-fit:contain; }
+
+.main-nav{
+  display:flex;
+  align-items:center;
+  gap: 30px;
+}
+.main-nav a{
+  font-size: .92rem;
+  font-weight:600;
+  color: var(--navy);
+}
+.main-nav a:hover{ color: var(--red); }
+
+.btn-nav{ flex-shrink:0; }
+
+.menu-btn{
+  display:none;
+  background:none;
+  border:none;
+  padding:6px;
+  flex-direction:column;
+  gap:5px;
+  margin-left: 6px;
+}
+.menu-btn span{
+  width:24px;
+  height:3px;
+  background: var(--navy);
+  border-radius: 2px;
+}
+
+.mobile-menu{
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  z-index: 30;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+.mobile-menu a{
+  padding: 14px 24px;
+  border-top: 1px solid var(--line);
+  font-weight:600;
+  font-size: .92rem;
+  color: var(--navy);
+}
+.mobile-menu .mobile-cta{ color: var(--red); }
+.mobile-menu[hidden]{ display:none; }
+
+/* =====================================================
+   HERO — desktop: dos columnas
+   ===================================================== */
+.hero{
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 40px 24px 0;
+  display:grid;
+  grid-template-columns: 1.02fr .98fr;
+  grid-template-areas:
+    "copy     media"
+    "form     media"
+    "vehicles secondary";
+  column-gap: 40px;
+  row-gap: 26px;
+  align-items: start;
+}
+
+.hero-copy{ grid-area: copy; min-width:0; }
+.form-wrap{ grid-area: form; min-width:0; }
+.vehicles-wrap{ grid-area: vehicles; min-width:0; }
+.hero-media{ grid-area: media; min-width:0; }
+.secondary-media{ grid-area: secondary; align-self: end; min-width:0; }
+
+.hero-title{
+  font-family:'Archivo Black', sans-serif;
+  font-weight:400;
+  font-size: clamp(2.1rem, 3.4vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -.01em;
+  margin:0;
+  color: var(--navy);
+  text-transform: uppercase;
+}
+
+.hero-subtitle{
+  margin: 14px 0 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--gray-500);
+  font-weight:500;
+}
+
+.hero-actions{
+  display:flex;
+  gap: 14px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.trust-bar{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  margin-top: 18px;
+  font-size: .82rem;
+  font-weight:700;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.trust-bar .sep{ color: var(--red); }
+
+/* ---------- media (imágenes) ---------- */
+.hero-media,
+.secondary-media{
+  border-radius: var(--radius-lg);
+  overflow:hidden;
+  background: linear-gradient(180deg,#c9d3dc 0%, #9aa7ab 45%, #b7ad8e 100%);
+  aspect-ratio: 16 / 11;
+}
+.hero-img,
+.secondary-img{
+  width:100%;
+  height:100%;
+  /*object-fit: cover;*/
+}
+
+/* =====================================================
+   FORM CARD
+   ===================================================== */
+.form-wrap{
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: 0 10px 30px rgba(16,35,63,.06);
+  overflow: hidden; /* contiene cualquier desborde de los tabs */
+}
+
+.form-title{
+  margin: 0 0 16px;
+  font-size: 1.05rem;
+  font-weight:800;
+  letter-spacing: -.01em;
+  color: var(--navy);
+  text-transform: uppercase;
+}
+
+.vehicle-tabs{
+  display:flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow:hidden;
+  margin-bottom: 18px;
+}
+.tab{
+  flex: 1 1 20%;
+  min-width: 0;
+  text-align:center;
+  padding: 11px 6px;
+  font-size: .78rem;
+  font-weight:700;
+  color: var(--navy);
+  border-right: 1px solid var(--line);
+  transition: color .12s ease, background-color .12s ease;
+}
+.tab:last-of-type{ border-right:none; }
+input[type="radio"]:checked + .tab{
+  color: var(--red);
+  background: rgba(210,31,31,.06);
+  box-shadow: inset 0 -2px 0 var(--red);
+}
+.tab:hover{ background: rgba(16,35,63,.04); }
+
+.form-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.form-grid input{
+  width:100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--navy);
+  font-family:'Inter', sans-serif;
+  font-size: .9rem;
+  font-weight:500;
+}
+.form-grid input::placeholder{ color: #9a9a95; }
+.form-grid input:focus{
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(210,31,31,.14);
+}
+
+/* =====================================================
+   WE BUY MORE THAN CARS
+   ===================================================== */
+.vehicles-title{
+  margin: 4px 0 16px;
+  font-size: .92rem;
+  font-weight:800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.vehicles-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.vehicle-card{
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 16px 10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 10px;
+  text-align:center;
+  transition: border-color .15s ease, transform .12s ease;
+  min-width: 0;
+}
+.vehicle-card:hover{
+  border-color: var(--navy);
+  transform: translateY(-2px);
+}
+
+/* Ícono del vehículo: reemplazá los PNG en assets/ (ver README).
+   Se muestra dentro de un cuadro de 56x56px con object-fit:contain,
+   así que cualquier proporción de imagen queda bien centrada. */
+.vehicle-icon{
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.vehicle-card span{
+  font-size: .74rem;
+  font-weight:700;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+/* =====================================================
+   STEPS
+   ===================================================== */
+.steps{
+  max-width: var(--max-w);
+  margin: 44px auto 0;
+  padding: 22px 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.step{
+  flex:1;
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  justify-content:center;
+}
+.step-icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--navy);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.step-icon svg{
+  width: 20px;
+  height: 20px;
+  color: var(--navy);
+}
+.step p{
+  margin:0;
+  font-size: .92rem;
+  font-weight:700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+.step-divider{
+  width: 1px;
+  height: 34px;
+  background: var(--line);
+  flex-shrink:0;
+}
+
+/* =====================================================
+   CTA FINAL
+   ===================================================== */
+.final-cta{
+  margin-top: 44px;
+  background: var(--navy);
+  padding: 28px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+.final-cta p{
+  margin:0;
+  color: var(--white);
+  font-family:'Archivo Black', sans-serif;
+  font-weight:400;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.site-footer{
+  background: var(--navy);
+  padding: 20px 24px 34px;
+}
+.site-footer p{
+  max-width: var(--max-w);
+  margin: 0 auto;
+  text-align:center;
+  font-size: .74rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,.55);
+}
+
+/* =====================================================
+   Accesibilidad
+   ===================================================== */
+:focus-visible{
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce){
+  *{ transition:none !important; }
+}
+
+/* =====================================================
+   RESPONSIVE — tablet
+   ===================================================== */
+@media (max-width: 980px){
+  .main-nav{ display:none; }
+  .btn-nav{ display:none; }
+  .menu-btn{ display:flex; }
+
+  .hero{
+    display:flex;
+    flex-direction:column;
+    gap: 22px;
+    padding: 0 24px 0;
+    width: 100%;
+  }
+
+  /* orden vertical: foto → título/copy → form → vehículos → segunda imagen */
+  .hero-media{ order:1; border-radius:0; aspect-ratio: 4/3; margin-top: -1px; }
+  .hero-copy{ order:2; padding-top: 22px; width:100%; text-align:center; }
+  .form-wrap{ order:3; width:100%; }
+  .vehicles-wrap{ order:4; width:100%; }
+  .secondary-media{ order:5; }
+
+  .hero-title{ text-align:center; }
+  .hero-subtitle{ text-align:center; }
+  .hero-actions{ justify-content:center; }
+  .trust-bar{ justify-content:center; }
+
+  .vehicles-grid{ grid-template-columns: repeat(2, 1fr); }
+
+  .steps{
+    flex-direction:column;
+    align-items:stretch;
+    gap: 16px;
+  }
+  .step{ justify-content:flex-start; }
+  .step-divider{ width:100%; height:1px; }
+}
+
+/* =====================================================
+   RESPONSIVE — mobile (vertical)
+   ===================================================== */
+@media (max-width: 600px){
+  .header-inner{ padding: 14px 18px; }
+  .logo-img{ height: 38px; }
+
+  .hero{ padding: 0 18px; gap: 20px; box-sizing: border-box; }
+  .hero-media{
+    margin: 0 -18px;
+    width: calc(100% + 36px);
+    border-radius:0;
+    /*aspect-ratio: 3/4;*/
+  }
+
+  .hero-copy{ padding-top: 22px; }
+  .hero-title{ font-size: 1.85rem; }
+  .hero-subtitle{ font-size: .92rem; }
+
+  .hero-actions{ flex-direction:column; }
+  .hero-actions .btn{ width:100%; }
+
+  .form-wrap{ padding: 20px 16px; }
+  .form-grid{ grid-template-columns: 1fr; }
+
+  /* tabs: 3 en la primera fila (33% c/u), 2 en la segunda (50% c/u), como la referencia */
+  .tab{ flex-basis: 33.333%; border-bottom: 1px solid var(--line); }
+  .tab:nth-child(8),
+  .tab:nth-child(10){ flex-basis: 50%; }
+
+  .vehicles-grid{ grid-template-columns: repeat(2, 1fr); }
+
+  .secondary-media{
+    margin: 0 -18px;
+    width: calc(100% + 36px);
+    border-radius:0;
+    aspect-ratio: 4/3;
+  }
+
+  .steps{ margin: 32px 18px 0; border-radius: var(--radius-md); }
+
+  .final-cta{
+    flex-direction:column;
+    text-align:center;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .final-cta .btn{ width:100%; max-width: 320px; }
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-card {
+  background: #ffffff;
+  padding: 30px 24px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-card {
+  transform: translateY(0);
+}
+
+.modal-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #e6f4ea;
+  color: #137333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+}
+
+.modal-title {
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  color: #111;
+}
+
+.modal-message {
+  margin: 0 0 20px 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.modal-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+</style>
 </head>
 <body>
-<center>WEBSITE IN DEVELOPING NO ACTIONS</center>
+
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="header-inner">
 
-    <a href="/" class="logo-link" aria-label="TXTGABE.COM - Inicio">
-      <!-- Reemplazá esta ruta por tu logo real (PNG/SVG) -->
-      <img src="assets/logo.png" alt="TXTGABE.COM - Text Me The VIN" class="logo-img">
+    <a href="https://txtgabe.com" class="logo-link" aria-label="TXTGABE.COM - Home Page">
+      <img src="assets/logo.png" alt="TXTGABE.COM - Text Me The VIN Logo" class="logo-img">
     </a>
 
     <nav class="main-nav">
-      <a href="#como-funciona">How It Works</a>
       <a href="#vehiculos">Vehicles We Buy</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#como-funciona">How It Works</a>
+      <!--a href="#about">About</a-->
+      <!--a href="#contact">Contact</a-->
     </nav>
 
-    <a href="#form" class="btn btn-primary btn-nav">Get an Offer</a>
+    <a href="#form" class="btn btn-primary btn-nav">GET AN OFFER</a>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+    <button class="menu-btn" id="menuBtn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
 
   <nav class="mobile-menu" id="mobileMenu" hidden>
-    <a href="#como-funciona">How It Works</a>
     <a href="#vehiculos">Vehicles We Buy</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="#form" class="mobile-cta">Get an Offer</a>
+    <a href="#como-funciona">How It Works</a>
+    <!--a href="#about">About</a-->
+    <!--a href="#contact">Contact</a-->
+    <a href="#form" class="mobile-cta">GET AN OFFER</a>
   </nav>
 </header>
 
@@ -46,8 +703,7 @@
 <section class="hero">
 
   <div class="hero-media">
-    <!-- Reemplazá esta ruta por la foto de la camioneta frente a las montañas -->
-    <img src="assets/hero-truck.jpg" alt="Camioneta Toyota Tacoma con branding TXTGABE.COM frente a las montañas" class="hero-img">
+    <img src="assets/hero-truck.jpg" alt="Toyota Tacoma truck with TXTGABE branding parked in front of mountains - Sell your vehicle fast" class="hero-img">
   </div>
 
   <div class="hero-copy">
@@ -58,8 +714,8 @@
     </p>
 
     <div class="hero-actions">
-      <a href="#form" class="btn btn-primary">Start With Your VIN</a>
-      <a href="sms:+17862776508" class="btn btn-outline">Text Gabe</a>
+      <a href="#form" class="btn btn-primary">START WITH YOUR VIN</a>
+      <a href="sms:+17862776508" class="btn btn-outline">TEXT GABE</a>
     </div>
 
     <ul class="trust-bar">
@@ -73,11 +729,11 @@
 
   <!-- ============ FORM CARD ============ -->
   <div class="form-wrap" id="form">
-    <form class="offer-form" action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+    <form class="offer-form" action="https://formspree.io/f/xgepblnw" method="POST">
 
       <h2 class="form-title">Get a Local Offer</h2>
 
-      <div class="vehicle-tabs" role="radiogroup" aria-label="Tipo de vehículo">
+      <div class="vehicle-tabs" role="radiogroup" aria-label="Vehicle type selection">
         <input type="radio" name="vehicle_type" id="type-car" value="Car / Truck" checked hidden>
         <label for="type-car" class="tab">Car / Truck</label>
 
@@ -95,13 +751,14 @@
       </div>
 
       <div class="form-grid">
-        <input type="text" name="vin_or_plate" placeholder="VIN or License Plate" required>
-        <input type="text" inputmode="numeric" name="mileage" placeholder="Mileage" required>
-        <input type="text" inputmode="numeric" name="zip_code" placeholder="ZIP Code" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="hidden" name="_replyto" value="mail@txtgabe.com">
+        <input type="text" name="vin_or_plate" placeholder="VIN or License Plate" required aria-label="VIN or License Plate">
+        <input type="text" inputmode="numeric" name="mileage" placeholder="Mileage" required aria-label="Vehicle Mileage">
+        <input type="text" inputmode="numeric" name="zip_code" placeholder="ZIP Code" required aria-label="ZIP Code">
+        <input type="tel" name="phone" placeholder="Phone Number" required aria-label="Phone Number">
       </div>
 
-      <button type="submit" class="btn btn-continue">Continue</button>
+      <button type="submit" class="btn btn-continue">CONTINUE</button>
     </form>
   </div>
 
@@ -111,47 +768,22 @@
     <div class="vehicles-grid">
 
       <div class="vehicle-card">
-        <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 22l2-9a3 3 0 0 1 3-2h26a3 3 0 0 1 3 2l2 9"/>
-          <path d="M4 22h40v5.5a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 27.5V22z"/>
-          <circle cx="13" cy="27" r="2.4"/>
-          <circle cx="35" cy="27" r="2.4"/>
-          <path d="M10 16h28"/>
-          <rect x="17" y="18.5" width="14" height="3" rx="0.6" fill="currentColor" stroke="none"/>
-        </svg>
+        <img src="assets/icon-cars-trucks.png" alt="Icon representing cars and pickup trucks for sale" class="vehicle-icon">
         <span>Cars &amp; Trucks</span>
       </div>
 
       <div class="vehicle-card">
-        <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="11" cy="24" r="5.4"/>
-          <circle cx="37" cy="24" r="5.4"/>
-          <path d="M15 24l6-11h6l7 8"/>
-          <path d="M15 24H9l4-9h6"/>
-          <path d="M28 13h6l3 6"/>
-        </svg>
+        <img src="assets/icon-motorcycles.png" alt="Icon representing motorcycles for quick sale" class="vehicle-icon">
         <span>Motorcycles</span>
       </div>
 
       <div class="vehicle-card">
-        <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 25V13a1.4 1.4 0 0 1 1.4-1.4H26l9 6h6a2 2 0 0 1 2 2v5.4"/>
-          <path d="M4 25h39"/>
-          <circle cx="12" cy="26.6" r="2.4"/>
-          <circle cx="33" cy="26.6" r="2.4"/>
-          <rect x="10" y="15" width="6" height="6" rx="0.6"/>
-        </svg>
+        <img src="assets/icon-rvs.png" alt="Icon representing recreational vehicles and motorhomes" class="vehicle-icon">
         <span>RVs</span>
       </div>
 
       <div class="vehicle-card">
-        <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
-          <rect x="7" y="11" width="30" height="13" rx="1.4"/>
-          <circle cx="15" cy="27" r="2.4"/>
-          <circle cx="29" cy="27" r="2.4"/>
-          <path d="M37 17h5l3 4v3h-8"/>
-          <rect x="12" y="15" width="4" height="4" rx="0.5" fill="currentColor" stroke="none"/>
-        </svg>
+        <img src="assets/icon-trailers.png" alt="Icon representing utility trailers and equipment" class="vehicle-icon">
         <span>Trailers &amp; More</span>
       </div>
 
@@ -160,8 +792,7 @@
 
   <!-- ============ IMAGEN SECUNDARIA (Gabe remolcando) ============ -->
   <div class="secondary-media">
-    <!-- Reemplazá esta ruta por la ilustración de Gabe remolcando motos y auto -->
-    <img src="assets/gabe-towing.png" alt="Ilustración de Gabe manejando su camioneta y remolcando motos y un auto" class="secondary-img">
+    <img src="assets/gabe-towing.png" alt="Illustration of Gabe driving his truck and towing motorcycles and cars for local buyers" class="secondary-img">
   </div>
 
 </section>
@@ -210,7 +841,7 @@
 <!-- ============ CTA FINAL ============ -->
 <section class="final-cta" id="contact">
   <p>Ready to Get an Offer?</p>
-  <a href="sms:+10000000000" class="btn btn-primary">Text Me the VIN</a>
+  <a href="sms:+17862776508" class="btn btn-primary">Text Me the VIN</a>
 </section>
 
 <!-- ============ FOOTER ============ -->
@@ -219,6 +850,123 @@
   Purchase offers are made by participating buyers.</p>
 </footer>
 
-<script src="script.js"></script>
+<!-- ============ MODAL DE CONFIRMACIÓN ============ -->
+<div class="modal-overlay" id="successModal" aria-hidden="true">
+  <div class="modal-card">
+    <div class="modal-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <h3 class="modal-title">Offer Request Sent!</h3>
+    <p class="modal-message">Thank you! We have received your vehicle details and will get back to you shortly with an offer.</p>
+    <button class="btn btn-primary modal-btn" id="closeModalBtn">OK</button>
+  </div>
+</div>
+
+<script>
+// ============ Menú hamburguesa ============
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    const isOpen = !mobileMenu.hidden;
+    mobileMenu.hidden = isOpen;
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.hidden = true;
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+// ============ Control del Modal ============
+const successModal = document.getElementById('successModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
+
+function openModal() {
+  if (successModal) {
+    successModal.classList.add('active');
+    successModal.setAttribute('aria-hidden', 'false');
+  }
+}
+
+function closeModal() {
+  if (successModal) {
+    successModal.classList.remove('active');
+    successModal.setAttribute('aria-hidden', 'true');
+  }
+}
+
+if (closeModalBtn) {
+  closeModalBtn.addEventListener('click', closeModal);
+}
+
+// Cerrar modal al hacer clic en el fondo oscuro
+if (successModal) {
+  successModal.addEventListener('click', (e) => {
+    if (e.target === successModal) closeModal();
+  });
+}
+
+// ============ Envío del formulario a Formspree (sin recargar la página) ============
+const form = document.querySelector('.offer-form');
+
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('.btn-continue');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    // Extraer datos del formulario
+    const rawData = new FormData(form);
+    
+    // Formatear la información en el campo de mensaje para Formspree
+    const formattedMessage = `
+NUEVA SOLICITUD DE OFERTA:
+----------------------------------
+Tipo de Vehículo: ${rawData.get('vehicle_type') || 'N/A'}
+VIN / Placa: ${rawData.get('vin_or_plate') || 'N/A'}
+Millas: ${rawData.get('mileage') || 'N/A'}
+ZIP Code: ${rawData.get('zip_code') || 'N/A'}
+Teléfono: ${rawData.get('phone') || 'N/A'}
+Email: ${rawData.get('_replyto') || 'N/A'}
+    `.trim();
+
+    // Crear el payload estructurado para Formspree
+    const payload = new FormData();
+    payload.append('email', rawData.get('_replyto'));
+    payload.append('message', formattedMessage);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: payload,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        openModal(); // Abre el modal en inglés al enviarse con éxito
+      } else {
+        alert('There was an error sending your request. Please try again.');
+      }
+    } catch (err) {
+      alert('There was an error sending your request. Please try again.');
+    } finally {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+}
+</script>
+
 </body>
 </html>
